@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZAISY13Ytw8=",
+  "success": true,
+  "projectFilePath": "/Users/barik/Desktop/dotnet/ProductPulseServer/ProductPulseServer.csproj",
+  "expectedPackageFiles": [
+    "/Users/barik/.nuget/packages/microsoft.aspnetcore.openapi/9.0.8/microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "/Users/barik/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
