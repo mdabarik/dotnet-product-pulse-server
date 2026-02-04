@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProductPulseServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb9006fa2ddde4f578980d0ea98bf19aefa2b024")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e29aae4373516f4d3533344b772a9d6148ce2b37")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProductPulseServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProductPulseServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
