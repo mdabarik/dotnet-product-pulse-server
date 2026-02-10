@@ -1,37 +1,50 @@
 using Microsoft.AspNetCore.Mvc;
+using ProductPulseServer.Application.DTOs;
+using ProductPulseServer.Application.Interfaces;
+using ProductPulseServer.Domain.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace Api.Controllers
+namespace ProductPulseServer.API.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-        private static readonly List<Product> products = new()
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
         {
-            new Product { Id = 1, Name = "Laptop", Price = 1200 },
-            new Product { Id = 2, Name = "Mouse", Price = 25 },
-            new Product { Id = 3, Name = "Keyboard", Price = 45 }
-        };
+            _productService = productService;
+        }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<ActionResult<List<Product>>> GetAll()
         {
+            var products = await _productService.GetAllProductsAsync();
             return Ok(products);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        [HttpPost]
+        public async Task<ActionResult<Product>> Add(ProductDto productDto)
         {
-            var product = products.FirstOrDefault(p => p.Id == id);
+            var product = await _productService.AddProductAsync(productDto);
+            return Ok(product);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Product>> Update(int id, ProductDto productDto)
+        {
+            var product = await _productService.UpdateProductAsync(id, productDto);
             if (product == null) return NotFound();
             return Ok(product);
         }
-    }
 
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public decimal Price { get; set; }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var deleted = await _productService.DeleteProductAsync(id);
+            if (!deleted) return NotFound();
+            return NoContent();
+        }
     }
 }

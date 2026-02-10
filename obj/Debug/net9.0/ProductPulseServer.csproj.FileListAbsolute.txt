@@ -7,7 +7,12 @@
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/ProductPulseServer.dll
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/ProductPulseServer.pdb
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
+/Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
+/Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/MySqlConnector.dll
+/Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Pomelo.EntityFrameworkCore.MySql.dll
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/barik/Desktop/dotnet/ProductPulseServer/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll

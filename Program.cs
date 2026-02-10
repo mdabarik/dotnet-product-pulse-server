@@ -1,19 +1,31 @@
+using Microsoft.EntityFrameworkCore;
+using ProductPulseServer.Application.Interfaces;
+using ProductPulseServer.Application.Services;
+using ProductPulseServer.Infrastructure.Data;
 
-var builder = WebApplication.CreateBuilder();
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 33))
+    )
+);
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddControllers();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/single-product", () => "GettAll");
-app.MapPost("/", () => "post api");
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+
 app.Run();
